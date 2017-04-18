@@ -1,6 +1,6 @@
 {
   "name": "petit-rotate",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Petit log rotator",
   "main": "index.js",
   "author": {

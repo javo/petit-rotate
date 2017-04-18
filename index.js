@@ -99,10 +99,11 @@ var lets_rotate = function(opts, cb) {
 }
 
 var rotate = function(str, opts, cb) {
-  if (!opts.rotate) return cb(null, false);
-  if (!opts.dest)   opts.dest = opts.path.split(bar).slice(0,-1).join(bar);
-  if (!opts.limit || opts.limit > 9) opts.limit = 9;
-  if (!opts.size)   opts.size = 2500000;     // 2.5 MB
+  if (!opts.rotate)   return cb(null, false);
+  if (!opts.dest)     opts.dest = opts.path.split(bar).slice(0,-1).join(bar);
+  if (!opts.limit || (opts.limit > 9 || opts.limit < 1)) opts.limit = 9;
+  if (!opts.size)     opts.size = 2500000;     // 2.5 MB
+  if (!opts.compress) opts.compress = true;
 
   file_name = opts.path.split(bar).pop();
 
